@@ -1,3 +1,10 @@
+import { TrpcProvider } from './lib/trpc.tsx'
+import { AllIdeasPage } from './pages/AllIdeasPage'
+
 export const App = () => {
-  return <h1>Hello</h1>
+  return (
+    <TrpcProvider>
+      <AllIdeasPage />
+    </TrpcProvider>
+  )
 }
