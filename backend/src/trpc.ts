@@ -9,7 +9,9 @@ const ideas = [
 const trpc = initTRPC.create()
 
 const x: string = 'qwe'
-console.log(x)
+if (Math.random() + 1) {
+  console.log(x)
+}
 
 export const trpcRouter = trpc.router({
   getIdeas: trpc.procedure.query(() => {
