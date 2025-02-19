@@ -1,21 +1,83 @@
 import { initTRPC } from '@trpc/server'
 
-const ideas = [
-  { nick: 'cool-idea-nick-1', name: 'Idea 1', description: 'Idea 1 description...' },
-  { nick: 'cool-idea-nick-2', name: 'Idea 2', description: 'Idea 2 description...' },
-  { nick: 'cool-idea-nick-3', name: 'Idea 3', description: 'Idea 3 description...' },
+const products = [
+  {
+    groupName: 'Гвозди',
+    nomenclatureNumber: '12345',
+    constructionMark: 'CM-001',
+    name: 'Гвоздь строительный',
+    strengthClass: 'C5',
+    diameter: '5 мм',
+    length: '50 мм',
+    coating: 'Цинковое',
+    coatingColor: 'Серебристый',
+    coatingThickness: '15 мкм',
+    threadLength: null,
+    threadTolerance: null,
+  },
+  {
+    groupName: 'Болты',
+    nomenclatureNumber: '23456',
+    constructionMark: 'CM-002',
+    name: 'Болт с шестигранной головкой',
+    strengthClass: 'C4',
+    diameter: '10 мм',
+    length: '70 мм',
+    coating: 'Гальванизация',
+    coatingColor: 'Желтый',
+    coatingThickness: '25 мкм',
+    threadLength: '35 мм',
+    threadTolerance: 'H2',
+  },
+  {
+    groupName: 'Винты',
+    nomenclatureNumber: '34567',
+    constructionMark: 'CM-003',
+    name: 'Винт с потайной головкой',
+    strengthClass: 'C6',
+    diameter: '4 мм',
+    length: '20 мм',
+    coating: 'Оксидирование',
+    coatingColor: 'Черный',
+    coatingThickness: '12 мкм',
+    threadLength: '15 мм',
+    threadTolerance: 'H1',
+  },
+  {
+    groupName: 'Гвозди',
+    nomenclatureNumber: '45678',
+    constructionMark: 'CM-004',
+    name: 'Гвоздь с резьбой',
+    strengthClass: 'C7',
+    diameter: '6 мм',
+    length: '60 мм',
+    coating: 'Эпоксидное покрытие',
+    coatingColor: 'Красный',
+    coatingThickness: '20 мкм',
+    threadLength: null,
+    threadTolerance: null,
+  },
+  {
+    groupName: 'Болты',
+    nomenclatureNumber: '56789',
+    constructionMark: 'CM-005',
+    name: 'Болт для металла',
+    strengthClass: 'C8',
+    diameter: '8 мм',
+    length: '80 мм',
+    coating: 'Антикоррозийное покрытие',
+    coatingColor: 'Золотистый',
+    coatingThickness: '18 мкм',
+    threadLength: '40 мм',
+    threadTolerance: 'H3',
+  },
 ]
 
 const trpc = initTRPC.create()
 
-const x: string = 'qwe'
-if (Math.random() + 1) {
-  console.log(x)
-}
-
 export const trpcRouter = trpc.router({
-  getIdeas: trpc.procedure.query(() => {
-    return { ideas }
+  getAllProducts: trpc.procedure.query(() => {
+    return { products }
   }),
 })
 

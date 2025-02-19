@@ -1,5 +1,5 @@
 import * as trpcExpress from '@trpc/server/adapters/express'
-import corm from 'cors'
+import cors from 'cors'
 import express from 'express'
 import { trpcRouter } from './trpc'
 const expressApps = express()
@@ -7,7 +7,7 @@ expressApps.get('/ping', (req, res) => {
   res.send('pong')
 })
 
-expressApps.use(corm())
+expressApps.use(cors())
 
 expressApps.use(
   '/trpc',
