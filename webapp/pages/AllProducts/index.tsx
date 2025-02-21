@@ -4,6 +4,7 @@ import { trpc } from '../../lib/trpc'
 
 export const AllProducts = () => {
   const { data, error, isLoading, isFetching, isError } = trpc.getAllProducts.useQuery()
+
   if (isLoading || isFetching) {
     return <div>Loading...</div>
   }
@@ -12,14 +13,14 @@ export const AllProducts = () => {
   }
   return (
     <div>
-      <h1>IdeaNick</h1>
+      <h1>Products</h1>
       {data.products.map((product) => {
         return (
-          <div key={product.nomenclatureNumber}>
+          <div key={product.nNumber}>
             <p>{product.groupName}</p>
-            <p>{product.nomenclatureNumber}</p>
+            <p>{product.nNumber}</p>
             <p>
-              <Link to={getViewProductRoute({ itemNumber: product.nomenclatureNumber })}>{product.name}</Link>
+              <Link to={getViewProductRoute({ productName: product.name })}>{product.name}</Link>
             </p>
             <p>{product.constructionMark}</p>
             <p>{product.diameter}</p>

@@ -3,7 +3,7 @@ import { initTRPC } from '@trpc/server'
 const products = [
   {
     groupName: 'Гвозди',
-    nomenclatureNumber: '12345',
+    nNumber: '12345',
     constructionMark: 'CM-001',
     name: 'Гвоздь строительный',
     strengthClass: 'C5',
@@ -17,7 +17,7 @@ const products = [
   },
   {
     groupName: 'Болты',
-    nomenclatureNumber: '23456',
+    nNumber: '23456',
     constructionMark: 'CM-002',
     name: 'Болт с шестигранной головкой',
     strengthClass: 'C4',
@@ -31,7 +31,7 @@ const products = [
   },
   {
     groupName: 'Винты',
-    nomenclatureNumber: '34567',
+    nNumber: '34567',
     constructionMark: 'CM-003',
     name: 'Винт с потайной головкой',
     strengthClass: 'C6',
@@ -45,7 +45,7 @@ const products = [
   },
   {
     groupName: 'Гвозди',
-    nomenclatureNumber: '45678',
+    nNumber: '45678',
     constructionMark: 'CM-004',
     name: 'Гвоздь с резьбой',
     strengthClass: 'C7',
@@ -59,7 +59,7 @@ const products = [
   },
   {
     groupName: 'Болты',
-    nomenclatureNumber: '56789',
+    nNumber: '56789',
     constructionMark: 'CM-005',
     name: 'Болт для металла',
     strengthClass: 'C8',

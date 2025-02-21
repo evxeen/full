@@ -1,10 +1,11 @@
 import { useParams } from 'react-router-dom'
+import { type ViewProductRouteParams } from '../../lib/routes.ts'
 
 export const ViewProductPage = () => {
-  const { itemNumber } = useParams() as { itemNumber: string }
+  const { productName } = useParams() as ViewProductRouteParams
   return (
     <div>
-      <h1>{itemNumber}</h1>
+      <h1>{productName}</h1>
       <p>Description of products 1...</p>
       <div>
         <p>Text paragrph 1 of idea 1...</p>
