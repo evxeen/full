@@ -1,5 +1,5 @@
 import { initTRPC } from '@trpc/server'
-
+import { z } from 'zod'
 const products = [
   {
     groupName: 'Гвозди',
@@ -79,6 +79,16 @@ export const trpcRouter = trpc.router({
   getAllProducts: trpc.procedure.query(() => {
     return { products }
   }),
+  getProduct: trpc.procedure
+    .input(
+      z.object({
+        productName: z.string(),
+      })
+    )
+    .query(({ input }) => {
+      const product = products.find((product) => product.name === input.productName)
+      return { product: product || null }
+    }),
 })
 
 export type TrpcRouter = typeof trpcRouter

@@ -3,14 +3,17 @@ import { getAllProductsRoute, getViewProductRoute, viewProductRouteParams } from
 import { TrpcProvider } from '../lib/trpc'
 import { AllProducts } from '../pages/AllProducts'
 import { ViewProductPage } from '../pages/ViewProductPage'
+import { Layout } from './components/Layout'
 
 export const App = () => {
   return (
     <TrpcProvider>
       <BrowserRouter>
         <Routes>
-          <Route path={getAllProductsRoute()} element={<AllProducts />} />
-          <Route path={getViewProductRoute(viewProductRouteParams)} element={<ViewProductPage />} />
+          <Route element={<Layout />}>
+            <Route path={getAllProductsRoute()} element={<AllProducts />} />
+            <Route path={getViewProductRoute(viewProductRouteParams)} element={<ViewProductPage />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </TrpcProvider>
