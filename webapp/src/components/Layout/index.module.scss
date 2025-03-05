@@ -1,0 +1,44 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+$breakpoint: '<=900px';
+
+.layout {
+  .navigation {
+    height: 100%;
+    overflow: auto;
+    flex: 0 0 200px;
+    padding: 20px 30px;
+    border-right: 1px solid $black;
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .menu {
+      .item {
+        &:not(:first-child) {
+          margin-top: 5px;
+        }
+
+        .link {
+          @include link;
+        }
+      }
+    }
+  }
+
+  .content {
+    height: 100%;
+    overflow: auto;
+    flex: 1 1 100%;
+    padding: 20px 30px;
+    @include media($breakpoint) {
+      overflow: visible;
+      flex: 0 0 auto;
+      height: auto;
+    }
+  }
+}
