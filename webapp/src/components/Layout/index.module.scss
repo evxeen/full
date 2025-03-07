@@ -4,41 +4,53 @@
 $breakpoint: '<=900px';
 
 .layout {
+  margin: 20px 70px;
   .navigation {
-    height: 100%;
-    overflow: auto;
-    flex: 0 0 200px;
-    padding: 20px 30px;
-    border-right: 1px solid $black;
-
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     .logo {
-      font-weight: bold;
       font-size: 20px;
-      margin-bottom: 10px;
     }
 
-    .menu {
-      .item {
-        &:not(:first-child) {
-          margin-top: 5px;
-        }
+    .searchWrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
 
-        .link {
-          @include link;
+      .searchIcon {
+        // ус
+        width: 24px;
+        position: absolute;
+        left: 10px;
+        color: #888; /* Цвет иконки */
+      }
+
+      .searchInput {
+        font-family: $defaultFontFamily;
+        font-size: 15px;
+        width: 500px;
+        padding-left: 45px;
+        height: 45px;
+        border: 1px solid rgba(0, 0, 255, 0.2);
+        border-radius: 4px;
+        box-shadow: 5px 5px 1px 1px rgba(0, 0, 255, 0.2);
+        transition:
+          box-shadow 0.3s ease-in-out,
+          border 0.3s ease-in-out; /* Добавляем плавный переход */
+
+        &:hover {
+          outline: none; /* Убираем стандартный контур */
+          border: 1px solid rgba(0, 0, 255, 0.2);
+          box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+        }
+        &:focus {
+          outline: none;
+          border: 1px solid rgba(0, 0, 255, 0.2);
+          box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
         }
       }
-    }
-  }
-
-  .content {
-    height: 100%;
-    overflow: auto;
-    flex: 1 1 100%;
-    padding: 20px 30px;
-    @include media($breakpoint) {
-      overflow: visible;
-      flex: 0 0 auto;
-      height: auto;
     }
   }
 }
