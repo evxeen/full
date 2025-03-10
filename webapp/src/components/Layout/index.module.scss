@@ -20,11 +20,10 @@ $breakpoint: '<=900px';
       align-items: center;
 
       .searchIcon {
-        // ус
         width: 24px;
         position: absolute;
         left: 10px;
-        color: #888; /* Цвет иконки */
+        color: #888;
       }
 
       .searchInput {
@@ -38,10 +37,10 @@ $breakpoint: '<=900px';
         box-shadow: 5px 5px 1px 1px rgba(0, 0, 255, 0.2);
         transition:
           box-shadow 0.3s ease-in-out,
-          border 0.3s ease-in-out; /* Добавляем плавный переход */
+          border 0.3s ease-in-out;
 
         &:hover {
-          outline: none; /* Убираем стандартный контур */
+          outline: none;
           border: 1px solid rgba(0, 0, 255, 0.2);
           box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
         }
