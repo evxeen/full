@@ -4,8 +4,10 @@
 $breakpoint: '<=900px';
 
 .layout {
-  margin: 20px 70px;
+  padding: 20px 70px;
+
   .navigation {
+    margin-bottom: 100px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -51,5 +53,10 @@ $breakpoint: '<=900px';
         }
       }
     }
+  }
+
+  .content {
+    width: 100%;
+    //border: 1px solid green;
   }
 }

@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router-dom'
 import css from './index.module.scss'
 import searchIcon from '../../../../../../icons/search.svg'
 
@@ -11,9 +12,9 @@ export const Layout = () => {
           <input type="text" placeholder="Поиск..." className={css.searchInput} />
         </div>
       </div>
-      {/* <div className={css.content}> */}
-      {/*  <Outlet /> */}
-      {/* </div> */}
+      <div className={css.content}>
+        <Outlet />
+      </div>
     </div>
   )
 }

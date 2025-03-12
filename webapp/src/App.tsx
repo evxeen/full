@@ -3,6 +3,7 @@ import { getAllProductsRoute, getViewProductRoute, viewProductRouteParams } from
 import { TrpcProvider } from '../lib/trpc'
 import { Layout } from './components/Layout'
 import { AllProducts } from './pages/AllProducts'
+import { MainPage } from './pages/MainPage'
 import { ViewProductPage } from './pages/ViewProductPage'
 import './styles/global.scss'
 
@@ -12,6 +13,7 @@ export const App = () => {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
+            <Route path="/" element={<MainPage />} />
             <Route path={getAllProductsRoute()} element={<AllProducts />} />
             <Route path={getViewProductRoute(viewProductRouteParams)} element={<ViewProductPage />} />
           </Route>
