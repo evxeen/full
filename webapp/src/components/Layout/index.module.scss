@@ -56,7 +56,7 @@ $breakpoint: '<=900px';
   }
 
   .content {
-    width: 100%;
-    //border: 1px solid green;
+    display: flex;
+    justify-content: center;
   }
 }

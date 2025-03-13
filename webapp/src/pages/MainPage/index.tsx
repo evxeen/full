@@ -1,15 +1,13 @@
 import css from './index.module.scss'
+import { menuElements } from '../../../lib/menuElements.ts'
 import { MainMenuElement } from '../../components/MainMenuElement'
 
 export const MainPage = () => {
   return (
     <div className={css.content}>
-      <MainMenuElement />
-      <MainMenuElement />
-      <MainMenuElement />
-      <MainMenuElement />
-      <MainMenuElement />
-      <MainMenuElement />
+      {menuElements.map((el) => (
+        <MainMenuElement key={el.name} menuData={el} />
+      ))}
     </div>
   )
 }

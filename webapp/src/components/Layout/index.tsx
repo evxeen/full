@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import css from './index.module.scss'
-import searchIcon from '../../../../../../icons/search.svg'
+import searchIcon from '../../assets/icons/search.svg'
 
 export const Layout = () => {
   return (

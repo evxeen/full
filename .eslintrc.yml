@@ -2,12 +2,15 @@ parser: '@typescript-eslint/parser'
 parserOptions:
   project: './tsconfig.json' # Укажите правильный путь к вашему tsconfig.json
   tsconfigRootDir: './' # Убедитесь, что указываете правильный корневой путь
+
 extends:
   - standard-with-typescript
   - prettier
+
 ignorePatterns:
   - node_modules
   - dist
+
 rules:
   'import/order':
     - error
@@ -23,6 +26,7 @@ rules:
         - pattern: 'react'
           group: 'external'
           position: 'before'
+
   '@typescript-eslint/consistent-type-definitions':
     - error
     - type
